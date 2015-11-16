@@ -3,6 +3,7 @@
         'Drinkz.config',       
         'Drinkz.menu',
         'Drinkz.playlist',
-        'Drinkz.playlists'        
+        'Drinkz.playlists',
+        'Drinkz.index'           
     ]);
 })();

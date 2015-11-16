@@ -8,6 +8,10 @@
         <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
         </button>
       </ion-nav-buttons>
+      <ion-nav-buttons side="right">
+        <button ng-click="busca()" class="button button-icon icon ion-search">
+        </button>
+      </ion-nav-buttons> 
     </ion-nav-bar>
     <ion-nav-view name="menuContent"></ion-nav-view>
   </ion-side-menu-content>
@@ -21,13 +25,13 @@
         <ion-item menu-close ng-click="login()">
           Login
         </ion-item>
-        <ion-item menu-close href="#/MYSEED/search">
+        <ion-item menu-close ui-sref="Drinkz.search" ui-sref-opts="{reload: true, notify: true}">
           Search
         </ion-item>
-        <ion-item menu-close href="#/MYSEED/browse">
+        <ion-item menu-close ui-sref="Drinkz.browse" ui-sref-opts="{reload: true, notify: true}">
           Browse
         </ion-item>
-        <ion-item menu-close href="#/MYSEED/playlists">
+        <ion-item menu-close ui-sref="Drinkz.playlists" ui-sref-opts="{reload: true, notify: true}">
           Playlists
         </ion-item>
       </ion-list>

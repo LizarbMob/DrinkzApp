@@ -105,12 +105,38 @@
         }
 })();
 
+(function() {    
+    angular
+        .module('Drinkz.index', ['Drinkz.index.controller']);
+    
+})();
+
+(function() {
+    angular
+        .module('Drinkz.index.controller', [])
+        .controller('IndexCtrl', IndexCtrl);
+    
+        IndexCtrl.$inject = ['$scope', '$state'];
+        
+        function IndexCtrl($scope, $state) {  
+            $scope.login = login;
+            
+            function login(user){
+                console.log(user);
+                $state.go("Drinkz.playlists");
+            }   
+                 
+          
+        }
+})();
+
 (function() {
     angular.module('Drinkz', ['ionic',   
         'Drinkz.config',       
         'Drinkz.menu',
         'Drinkz.playlist',
-        'Drinkz.playlists'        
+        'Drinkz.playlists',
+        'Drinkz.index'           
     ]);
 })();
 
@@ -171,8 +197,16 @@
                 }
             });
             
+            $stateProvider
+                .state('index', {
+                    url: '/',
+                    controller: 'IndexCtrl as vm',
+                    templateUrl: 'app/index/index.html'
+            });
+
+            
             // if none of the above states are matched, use this as the fallback
-            $urlRouterProvider.otherwise('/Drinkz/playlists');
+            $urlRouterProvider.otherwise('/');
     
     };
 

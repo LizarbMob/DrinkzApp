@@ -1,57 +1,5 @@
 (function() {    
     angular
-        .module('Drinkz.playlists', ['Drinkz.playlists.controller']);
-    
-})();
-
-(function() {
-    angular
-        .module('Drinkz.playlists.controller', [])
-        .controller('PlaylistsCtrl', PlaylistsCtrl);
-    
-        PlaylistsCtrl.$inject = ['$scope'];
-        
-        function PlaylistsCtrl($scope) {     
-                 
-            $scope.playlists = [
-                { title: 'Reggae', id: 1 },
-                { title: 'Chill', id: 2 },
-                { title: 'Dubstep', id: 3 },
-                { title: 'Indie', id: 4 },
-                { title: 'Rap', id: 5 },
-                { title: 'Cowbell', id: 6 }
-            ];          
-        }
-})();
-
-(function() {    
-    angular
-        .module('Drinkz.playlist', ['Drinkz.playlist.controller']);
-    
-})();
-
-(function() {
-    angular
-        .module('Drinkz.playlist.controller', [])
-        .controller('PlaylistCtrl', PlaylistCtrl);
-    
-        PlaylistCtrl.$inject = ['$scope', '$stateParams'];
-        
-        function PlaylistCtrl($scope, $stateParams) {     
-                 
-            $scope.playlists = [
-                { title: 'Reggae', id: 1 },
-                { title: 'Chill', id: 2 },
-                { title: 'Dubstep', id: 3 },
-                { title: 'Indie', id: 4 },
-                { title: 'Rap', id: 5 },
-                { title: 'Cowbell', id: 6 }
-            ];          
-        }
-})();
-
-(function() {    
-    angular
         .module('Drinkz.menu', ['Drinkz.menu.controller']);
     
 })();
@@ -91,8 +39,48 @@
             
             function login(user){
                 console.log(user);
-                $state.go("Drinkz.playlists");
+                $state.go("Drinkz.home");
             }   
+                 
+          
+        }
+})();
+
+(function() {    
+    angular
+        .module('Drinkz.home', ['Drinkz.home.controller']);
+    
+})();
+
+(function() {
+    angular
+        .module('Drinkz.home.controller', [])
+        .controller('HomeCtrl', HomeCtrl);
+    
+        HomeCtrl.$inject = ['$scope', '$state'];
+        
+        function HomeCtrl($scope, $state) {  
+            
+                 
+          
+        }
+})();
+
+(function() {    
+    angular
+        .module('Drinkz.detail', ['Drinkz.detail.controller']);
+    
+})();
+
+(function() {
+    angular
+        .module('Drinkz.detail.controller', [])
+        .controller('DetailCtrl', DetailCtrl);
+    
+        DetailCtrl.$inject = ['$scope', '$state'];
+        
+        function DetailCtrl($scope, $state) {  
+            
                  
           
         }
@@ -102,8 +90,8 @@
     angular.module('Drinkz', ['ionic',   
         'Drinkz.config',       
         'Drinkz.menu',
-        'Drinkz.playlist',
-        'Drinkz.playlists',
+        'Drinkz.detail', 
+        'Drinkz.home',
         'Drinkz.index'           
     ]);
 })();
@@ -145,25 +133,30 @@
                     }
             })
             
-            .state('Drinkz.playlists', {
-                url: '/playlists',
-                views: {
-                     'menuContent': {
-                         templateUrl: 'app/playlists/playlists.html',
-                         controller: 'PlaylistsCtrl as vm'
-                      }
-                }
+            .state('Drinkz.home', {
+                    url: '/home',
+                    views: {
+                         'menuContent': {
+                             templateUrl: 'app/home/home.html',
+                             controller: 'HomeCtrl as vm'
+                         }
+                    }
             })
-        
-            .state('Drinkz.single', {
-                url: '/playlists/:playlistId',
-                views: {
-                     'menuContent': {
-                         templateUrl: 'app/playlist/playlist.html',
-                         controller: 'PlaylistCtrl as vm'
-                     }
-                }
-            });
+            
+            
+            .state('Drinkz.detail', {
+                    url: '/detail',
+                    views: {
+                         'menuContent': {
+                             templateUrl: 'app/detail/detail.html',
+                             controller: 'Detail as vm'
+                         }
+                    }
+            })
+            
+            
+            
+            
             
             $stateProvider
                 .state('index', {

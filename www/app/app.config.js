@@ -35,25 +35,30 @@
                     }
             })
             
-            .state('Drinkz.playlists', {
-                url: '/playlists',
-                views: {
-                     'menuContent': {
-                         templateUrl: 'app/playlists/playlists.html',
-                         controller: 'PlaylistsCtrl as vm'
-                      }
-                }
+            .state('Drinkz.home', {
+                    url: '/home',
+                    views: {
+                         'menuContent': {
+                             templateUrl: 'app/home/home.html',
+                             controller: 'HomeCtrl as vm'
+                         }
+                    }
             })
-        
-            .state('Drinkz.single', {
-                url: '/playlists/:playlistId',
-                views: {
-                     'menuContent': {
-                         templateUrl: 'app/playlist/playlist.html',
-                         controller: 'PlaylistCtrl as vm'
-                     }
-                }
-            });
+            
+            
+            .state('Drinkz.detail', {
+                    url: '/detail',
+                    views: {
+                         'menuContent': {
+                             templateUrl: 'app/detail/detail.html',
+                             controller: 'Detail as vm'
+                         }
+                    }
+            })
+            
+            
+            
+            
             
             $stateProvider
                 .state('index', {

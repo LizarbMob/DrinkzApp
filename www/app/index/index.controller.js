@@ -10,7 +10,7 @@
             
             function login(user){
                 console.log(user);
-                $state.go("Drinkz.playlists");
+                $state.go("Drinkz.home");
             }   
                  
           

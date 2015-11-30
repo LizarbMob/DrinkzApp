@@ -1,5 +1,43 @@
 (function() {    
     angular
+        .module('Drinkz.profile', ['Drinkz.profile.controller']);
+    
+})();
+
+(function() {
+    angular
+        .module('Drinkz.profile.controller', [])
+        .controller('ProfileCtrl', ProfileCtrl);
+    
+        ProfileCtrl.$inject = ['$scope', '$ionicModal', '$timeout'];
+        
+        function ProfileCtrl($scope, $ionicModal, $timeout) {     
+                 
+            
+        }
+})();
+
+(function() {    
+    angular
+        .module('Drinkz.preferences', ['Drinkz.preferences.controller']);
+    
+})();
+
+(function() {
+    angular
+        .module('Drinkz.preferences.controller', [])
+        .controller('PreferencesCtrl', PreferencesCtrl);
+    
+        PreferencesCtrl.$inject = ['$scope', '$ionicModal', '$timeout'];
+        
+        function PreferencesCtrl($scope, $ionicModal, $timeout) {     
+                 
+            
+        }
+})();
+
+(function() {    
+    angular
         .module('Drinkz.menu', ['Drinkz.menu.controller']);
     
 })();
@@ -92,6 +130,8 @@
         'Drinkz.menu',
         'Drinkz.detail', 
         'Drinkz.home',
+        'Drinkz.profile',
+        'Drinkz.preferences',
         'Drinkz.index'           
     ]);
 })();
@@ -150,6 +190,26 @@
                          'menuContent': {
                              templateUrl: 'app/detail/detail.html',
                              controller: 'Detail as vm'
+                         }
+                    }
+            })
+                 
+            .state('Drinkz.profile', {
+                    url: '/profile',
+                    views: {
+                         'menuContent': {
+                             templateUrl: 'app/profile/profile.html',
+                             controller: 'ProfileCtrl as vm'
+                         }
+                    }
+            })
+            
+            .state('Drinkz.preferences', {
+                    url: '/preferences',
+                    views: {
+                         'menuContent': {
+                             templateUrl: 'app/preferences/preferences.html',
+                             controller: 'PreferencesCtrl as vm'
                          }
                     }
             })

@@ -55,6 +55,26 @@
                          }
                     }
             })
+                 
+            .state('Drinkz.profile', {
+                    url: '/profile',
+                    views: {
+                         'menuContent': {
+                             templateUrl: 'app/profile/profile.html',
+                             controller: 'ProfileCtrl as vm'
+                         }
+                    }
+            })
+            
+            .state('Drinkz.preferences', {
+                    url: '/preferences',
+                    views: {
+                         'menuContent': {
+                             templateUrl: 'app/preferences/preferences.html',
+                             controller: 'PreferencesCtrl as vm'
+                         }
+                    }
+            })
             
             
             

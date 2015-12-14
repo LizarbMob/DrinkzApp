@@ -6,6 +6,7 @@
         'Drinkz.home',
         'Drinkz.profile',
         'Drinkz.preferences',
-        'Drinkz.index'           
+        'Drinkz.index',
+        'Drinkz.searchBox'           
     ]);
 })();

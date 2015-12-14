@@ -24,16 +24,8 @@
                              templateUrl: 'app/search/search.html'
                          }
                     }
-            })
-        
-            .state('Drinkz.browse', {
-                    url: '/browse',
-                    views: {
-                         'menuContent': {
-                             templateUrl: 'app/browse/browse.html'
-                         }
-                    }
-            })
+            }) 
+         
             
             .state('Drinkz.home', {
                     url: '/home',

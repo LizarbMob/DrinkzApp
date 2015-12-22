@@ -2,6 +2,7 @@
     angular.module('Drinkz', ['ionic',   
         'Drinkz.config',       
         'Drinkz.menu',
+        'ngCordova',
         'Drinkz.detail', 
         'Drinkz.home',
         'Drinkz.profile',
